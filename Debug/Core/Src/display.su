@@ -1,0 +1,13 @@
+../Core/Src/display.c:23:13:ssd1306_SendCommand	32	static
+../Core/Src/display.c:38:13:ssd1306_SendCommands	48	static
+../Core/Src/display.c:50:13:ssd1306_SendData	24	static
+../Core/Src/display.c:63:13:ssd1306_SetPage	16	static
+../Core/Src/display.c:70:13:ssd1306_SetColumn	16	static
+../Core/Src/display.c:79:6:Display_Update	16	static
+../Core/Src/display.c:90:6:Display_Init	16	static
+../Core/Src/display.c:167:6:Display_Clear	8	static
+../Core/Src/display.c:172:6:Display_DrawPixel	40	static
+../Core/Src/display.c:190:6:Display_DrawLine	88	static
+../Core/Src/display.c:250:6:Display_DrawRect	56	static
+../Core/Src/display.c:268:6:Display_FillRect	96	static
+../Core/Src/display.c:372:6:Display_DrawSprite	96	static
