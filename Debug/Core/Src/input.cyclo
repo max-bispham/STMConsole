@@ -1,5 +1,0 @@
-../Core/Src/input.c:30:6:Input_Init	1
-../Core/Src/input.c:40:6:Input_OnExtiInterrupt	2
-../Core/Src/input.c:58:6:Input_UpdatePerFrame	10
-../Core/Src/input.c:89:10:Input_GetState	1
-../Core/Src/input.c:94:6:Input_ClearState	1
