@@ -1,0 +1,22 @@
+/*
+ * drv_led.c
+ *
+ *  Created on: Oct 12, 2026
+ *      Author: max
+ */
+
+#include "drv_led.h"
+#include "driver.h"
+
+const driver_t drv_led = {
+		.open = open
+		.close = drv_nop,
+		.read = drv_unsupported_read,
+		.write = drv_unsupported_write,
+		.ioctl = drv_unsupported_ioctl
+};
+
+
+int open(void) {
+	return 0;
+}

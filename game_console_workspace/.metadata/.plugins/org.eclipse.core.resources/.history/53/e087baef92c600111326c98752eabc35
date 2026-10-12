@@ -1,0 +1,35 @@
+/*
+ * drv_led.c
+ *
+ *  Created on: Oct 12, 2026
+ *      Author: max
+ */
+
+#include "drv_led.h"
+#include "main.h"
+
+int led_open(void);
+int led_close(void);
+int close(void *buf, size_t len);
+int write(const void *buf, size_t len);
+int ioctrl;
+
+const driver_t drv_led = {
+		.open = led_open,
+		.close = drv_nop,
+		.read = drv_unsupported_read,
+		.write = drv_unsupported_write,
+		.ioctl = drv_unsupported_ioctl
+};
+
+
+static int led_open(void) {
+	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+
+	return DRV_OK;
+}
+
+static int led_close(void) {
+	led_open();
+}

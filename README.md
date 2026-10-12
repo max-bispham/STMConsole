@@ -14,7 +14,16 @@ In development. The toolchain, pin map, and architecture are settled, and the fi
 - [ ] Sound
 - [ ] Input and a playable game
 
-Planned after that: loading games from an SD card, DMA for display transfers, a game menu, and battery power.
+Stage 2 moves the same drivers under FreeRTOS and adds the SD card:
+
+- [ ] The game loop runs as a FreeRTOS task
+- [ ] Display task with double buffering and DMA transfers
+- [ ] SD card driver reads raw sectors
+- [ ] FatFs and a game menu listing the card's games
+- [ ] Games load and play from the card
+- [ ] Save and restore from a pause screen
+
+Battery power comes after that.
 
 ## Hardware
 
@@ -82,15 +91,15 @@ The firmware has four layers. Calls only go downward.
 
 ### The driver interface
 
-Every driver is one `.c` file that fills in this struct and exports it as a constant. It is the same idea as the file-operations table in a Linux character driver, cut down to five entries.
+Every driver fills in this struct and exports it as a constant. It is the same idea as the file-operations table in a Linux character driver, cut down to five entries.
 
 ```c
 /* Core/Inc/driver.h */
 typedef struct {
     int (*open)(void);
     int (*close)(void);
-    int (*read)(void *buf, size_t len);
-    int (*write)(const void *buf, size_t len);
+    int (*read)(uint8_t *buf, size_t len);
+    int (*write)(const uint8_t *buf, size_t len);
     int (*ioctl)(int request, void *arg);
 } driver_t;
 
@@ -105,8 +114,9 @@ enum {
 
 - `read` and `write` return the number of bytes transferred, or a negative code.
 - `open`, `close` and `ioctl` return `DRV_OK` or a negative code.
-- No pointer in the struct is ever null. An operation a device lacks points at a shared stub that returns `DRV_ENOTSUP`.
-- Callers reach a device only through its struct, for example `dev_led.write(&bits, 1)`.
+- Buffers are `uint8_t`, so `len` always counts bytes and the compiler rejects a wider type passed by mistake.
+- No pointer in the struct is ever null. An operation a device lacks points at a shared stub in `driver.c` that returns `DRV_ENOTSUP`.
+- Each driver is a pair of files. The `.c` file defines the driver's functions as `static` and fills in its `driver_t`; the header declares only that `driver_t`, plus any ioctl request numbers. Callers reach a device only through its struct, for example `dev_led.write(&bits, sizeof bits)`.
 
 ### Devices
 
@@ -138,11 +148,10 @@ All project code lives flat in `Core/Inc` and `Core/Src`, next to the generated 
 | --- | --- | --- |
 | `Core/Inc/driver.h` | C | `driver_t` and the return codes |
 | `Core/Src/driver.c` | C | Shared stubs that return `DRV_ENOTSUP` |
-| `Core/Inc/devices.h` | C | Device declarations, ioctl requests, `keypad_tick` |
-| `Core/Src/drv_led.c` | C | LED driver |
-| `Core/Src/drv_oled.c` | C | Display driver |
-| `Core/Src/drv_buzzer.c` | C | Buzzer driver |
-| `Core/Src/drv_keypad.c` | C | Button driver with debounce |
+| `Core/Inc/drv_led.h`, `Core/Src/drv_led.c` | C | LED driver |
+| `Core/Inc/drv_oled.h`, `Core/Src/drv_oled.c` | C | Display driver and its ioctl requests |
+| `Core/Inc/drv_buzzer.h`, `Core/Src/drv_buzzer.c` | C | Buzzer driver |
+| `Core/Inc/drv_keypad.h`, `Core/Src/drv_keypad.c` | C | Button driver with debounce, and `keypad_tick` |
 | `Core/Inc/screen.h`, `Core/Src/screen.c` | C | Framebuffer, pixel function, CHIP-8 scaling |
 | `Core/Inc/chip8.h`, `Core/Src/chip8.cpp` | C++ | The emulator core |
 | `Core/Inc/roms.h`, `Core/Src/roms.c` | C | Built-in games and their button maps |

@@ -1,0 +1,27 @@
+/*
+ * devices.h
+ *
+ *  Created on: Oct 12, 2026
+ *      Author: max
+ */
+
+#ifndef INC_DEVICES_H_
+#define INC_DEVICES_H_
+
+/* Core/Inc/devices.h */
+extern const driver_t dev_led;
+extern const driver_t dev_display;
+extern const driver_t dev_buzzer;
+extern const driver_t dev_keypad;
+
+/* dev_display ioctl requests; arg points at one uint8_t */
+#define DISPLAY_SET_CONTRAST  1   /* 0 to 255 */
+#define DISPLAY_SET_POWER     2   /* 0 = panel off, 1 = on */
+#define DISPLAY_SET_INVERT    3   /* 0 = normal, 1 = inverted */
+#define DISPLAY_TEST_ALL_ON   4   /* 1 = force every pixel on, 0 = show the frame */
+
+/* Sample the buttons once and update the debounce state. Call once per frame. */
+void keypad_tick(void);
+
+
+#endif /* INC_DEVICES_H_ */

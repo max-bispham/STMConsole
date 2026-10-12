@@ -1,0 +1,4 @@
+../Core/Src/driver.c:10:5:drv_nop	1
+../Core/Src/driver.c:14:5:drv_unsupported_read	1
+../Core/Src/driver.c:18:5:drv_unsupported_write	1
+../Core/Src/driver.c:22:5:drv_unsupported_ioctl	1

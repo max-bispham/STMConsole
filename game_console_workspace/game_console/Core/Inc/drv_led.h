@@ -1,0 +1,17 @@
+/*
+ * drv_led.h
+ *
+ *  Created on: Oct 12, 2026
+ *      Author: max
+ */
+
+#ifndef INC_DRV_LED_H_
+#define INC_DRV_LED_H_
+
+#include "driver.h"
+
+extern const driver_t drv_led;
+
+
+
+#endif /* INC_DRV_LED_H_ */

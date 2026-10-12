@@ -1,0 +1,42 @@
+/*
+ * driver.c
+ *
+ *  Created on: Oct 12, 2026
+ *      Author: max
+ */
+
+#ifndef DRIVER_H
+#define DRIVER_H
+
+#include <stddef.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct {
+    int (*open)(void);
+    int (*close)(void);
+    int (*read)(void *buf, size_t len);
+    int (*write)(const void *buf, size_t len);
+    int (*ioctl)(int request, void *arg);
+} driver_t;
+
+enum {
+    DRV_OK      =  0,
+    DRV_ERR     = -1,
+    DRV_ENOTSUP = -2,
+    DRV_EINVAL  = -3,
+    DRV_EBUSY   = -4
+};
+
+int drv_nop(void);
+int drv_unsupported_read(void *buf, size_t len);
+int drv_unsupported_write(const void *buf, size_t len);
+int drv_unsupported_ioctl(int request, void *arg);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* DRIVER_H */
