@@ -10,7 +10,7 @@
 
 #include "driver.h"
 
-extern const driver_t drv_led;
+extern const driver_t dev_led;
 
 
 

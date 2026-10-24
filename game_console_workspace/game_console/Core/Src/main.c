@@ -18,10 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "stdint.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "drv_led.h"
+#include "drv_oled.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +44,6 @@
 SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,19 +90,32 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+  dev_led.open();
+  uint8_t on = 0x03;
+  uint8_t off = 0x00;
 
+  dev_display.open();
+
+  dev_display.ioctl(DISPLAY_TEST_ALL_ON, &on);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  dev_led.write(&on, 1);
+	  HAL_Delay(500);
+	  dev_led.write(&off, 1);
+	  HAL_Delay(500);
     /* USER CODE END WHILE */
 
+
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_9);
-	  HAL_Delay(500);
+//	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
+//	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_9);
+//	  HAL_Delay(500);
+
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

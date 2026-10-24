@@ -13,7 +13,7 @@ static int led_close(void);
 static int led_write(const uint8_t *buf, size_t len);
 
 
-const driver_t drv_led = {
+const driver_t dev_led = {
 		.open = led_open,
 		.close = led_close,
 		.read = drv_unsupported_read,

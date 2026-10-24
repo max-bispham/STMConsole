@@ -1,0 +1,5 @@
+../Core/Src/drv_oled.c:37:12:oled_open	16	static
+../Core/Src/drv_oled.c:48:12:oled_close	8	static
+../Core/Src/drv_oled.c:56:12:oled_ioctl	24	static
+../Core/Src/drv_oled.c:77:13:oled_reset	8	static
+../Core/Src/drv_oled.c:84:12:oled_cmd	24	static
