@@ -6,10 +6,10 @@ A handheld game console built on an STM32F103C8T6 "Blue Pill". A CHIP-8 emulator
 
 In development. The toolchain, pin map, and architecture are settled, and the firmware is being written in the order below.
 
-- [ ] Driver pattern proven with the LED driver
-- [ ] Display initializes (all pixels on)
-- [ ] Display accepts a full frame
-- [ ] Pixel addressing
+- [x] Driver pattern proven with the LED driver
+- [x] Display initializes (all pixels on)
+- [x] Display accepts a full frame
+- [x] Pixel addressing
 - [ ] Emulator runs on the board (IBM logo)
 - [ ] Sound
 - [ ] Input and a playable game
