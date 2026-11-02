@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="java.lang.Class">
+		<list key="findhistory">
+			<item value="BTN0_Pin"/>
+			<item value="BTN0_Pinm"/>
+			<item value="oled_cmd"/>
+			<item value="Reset"/>
+		</list>
+	</section>
+</section>

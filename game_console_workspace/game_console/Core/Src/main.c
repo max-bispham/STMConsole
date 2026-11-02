@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stdint.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "drv_led.h"
@@ -161,24 +161,21 @@ int main(void)
       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   };
 
-  dev_display.open();
-  screen_set_pixel(0, 0, 1);
-  screen_set_pixel(0, 63, 1);
-  screen_set_pixel(127, 0, 1);
-  screen_set_pixel(127, 63, 1);
-  dev_display.write(screen_buffer(), SCREEN_BYTES);
+//  dev_display.open();
+//  screen_set_pixel(0, 0, 1);
+//  screen_set_pixel(0, 63, 1);
+//  screen_set_pixel(127, 0, 1);
+//  screen_set_pixel(127, 63, 1);
+//  dev_display.write(screen_buffer(), SCREEN_BYTES);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  dev_led.write(&on, 1);
-	  HAL_Delay(500);
-	  dev_led.write(&off, 1);
-	  HAL_Delay(500);
+	  int state = HAL_GPIO_ReadPin(BTN4_GPIO_Port, BTN4_Pin);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, !state);
     /* USER CODE END WHILE */
-
 
     /* USER CODE BEGIN 3 */
 //	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
@@ -300,13 +297,13 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : BTN7_Pin BTN6_Pin BTN5_Pin BTN4_Pin */
   GPIO_InitStruct.Pin = BTN7_Pin|BTN6_Pin|BTN5_Pin|BTN4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : BTN3_Pin BTN2_Pin BTN1_Pin BTN0_Pin */
   GPIO_InitStruct.Pin = BTN3_Pin|BTN2_Pin|BTN1_Pin|BTN0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : OLED_RES_Pin OLED_DC_Pin LED_RED_Pin LED_GREEN_Pin */

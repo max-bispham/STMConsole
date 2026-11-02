@@ -1,14 +1,359 @@
-16:29:01 **** Incremental Build of configuration Debug for project game_console ****
+12:42:04 **** Incremental Build of configuration Debug for project game_console ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driver.d" -MT"Core/Src/driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
 arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: game_console.elf
  
 arm-none-eabi-size  game_console.elf 
 arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
    text	   data	    bss	    dec	    hex	filename
-   5292	     12	   1660	   6964	   1b34	game_console.elf
+   7328	     12	   2684	  10024	   2728	game_console.elf
 Finished building: default.size.stdout
  
 Finished building: game_console.list
+ 
+12:42:10 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7328	     12	   2684	  10024	   2728	game_console.elf
+Finished building: default.size.stdout
+ 
+12:42:20 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7328	     12	   2684	  10024	   2728	game_console.elf
+Finished building: default.size.stdout
+ 
+17:24:18 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:24:41 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:40:05 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
+arm-none-eabi-gcc "../Core/Src/drv_led.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/drv_led.d" -MT"Core/Src/drv_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/drv_led.o"
+arm-none-eabi-gcc "../Core/Src/drv_oled.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/drv_oled.d" -MT"Core/Src/drv_oled.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/drv_oled.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:40:34 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:41:11 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:41:17 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:41:40 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	   1660	   7132	   1bdc	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:41:46 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	   1660	   7132	   1bdc	game_console.elf
+Finished building: default.size.stdout
+ 
+17:42:06 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	   1660	   7132	   1bdc	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:42:11 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	   1660	   7132	   1bdc	game_console.elf
+Finished building: default.size.stdout
+ 
+17:42:30 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:42:37 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:44:12 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:44:24 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:44:37 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:44:43 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:45:03 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:45:09 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+17:45:36 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:24: warning: unused variable 'cube_frame' [-Wunused-variable]
+   97 |   static const uint8_t cube_frame[1024] = {
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:96:11: warning: unused variable 'off' [-Wunused-variable]
+   96 |   uint8_t off = 0x00;
+      |           ^~~
+../Core/Src/main.c:95:11: warning: unused variable 'on' [-Wunused-variable]
+   95 |   uint8_t on = 0x03;
+      |           ^~
+arm-none-eabi-g++ -o "game_console.elf" @"objects.list"   -mcpu=cortex-m3 -T"/home/max/Documents/github/STMConsole/game_console_workspace/game_console/STM32F103C8TX_FLASH.ld" -Wl,-Map="game_console.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: game_console.elf
+ 
+arm-none-eabi-size  game_console.elf 
+arm-none-eabi-objdump -h -S game_console.elf  > "game_console.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
+ 
+Finished building: game_console.list
+ 
+17:45:44 **** Incremental Build of configuration Debug for project game_console ****
+make -j12 all 
+arm-none-eabi-size  game_console.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     12	   1660	   7136	   1be0	game_console.elf
+Finished building: default.size.stdout
  
