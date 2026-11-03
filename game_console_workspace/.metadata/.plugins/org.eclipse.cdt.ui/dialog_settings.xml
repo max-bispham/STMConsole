@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="LastUsedHeaderTemplate" value="Default C header template"/>
-	<item key="LastUsedSourceTemplate" value="Default C source template"/>
+	<item key="LastUsedSourceTemplate" value="Default C++ source template"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
@@ -37,5 +37,8 @@
 		<item key="y" value="283"/>
 		<item key="width" value="525"/>
 		<item key="height" value="655"/>
+	</section>
+	<section name="CResourceRenameRefactoringInputPage">
+		<item key="updateReferences" value="true"/>
 	</section>
 </section>

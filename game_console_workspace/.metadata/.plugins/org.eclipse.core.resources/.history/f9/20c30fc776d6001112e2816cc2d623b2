@@ -1,0 +1,26 @@
+/*
+ * app.cpp
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+#include "app.h"
+#include "screen.h"
+#include "drv_oled.h"
+#include "drv_led.h"
+#include "drv_keypad.h"
+extern "C" {
+
+void app_main(void) {
+	dev_keypad.open();
+	uint8_t state = 0x00;
+	while (1) {
+		dev_keypad.read(state, sizeof(state));
+		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, (state != 0x00));
+
+	}
+
+}
+}
+
+

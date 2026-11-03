@@ -1,0 +1,42 @@
+/*
+ * keypad.c
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+
+#include "keypad.h"
+#include "main.h"
+#include "main.c"
+
+static int keypad_open(void);
+static int keypad_read(uint8_t *buf, size_t len);
+
+typedef struct{
+	GPIO_typedef *port;
+	uint16_t      btn;
+} button_t;
+
+button_t keypad[8] = {
+		{.port = help,	.btn = nah},
+
+
+};
+
+const driver_t dev_keypad = {
+		.open = keypad_open,
+		.close = drv_unsupported_close,
+		.read = keypad_read,
+		.write = drv_unsupported_write,
+		.ioctl = drv_unsupported_ioctl
+};
+
+
+
+static int keypad_open(void) {
+
+}
+
+static int keypad_read(uint8_t *buf, size_t len) {
+
+}

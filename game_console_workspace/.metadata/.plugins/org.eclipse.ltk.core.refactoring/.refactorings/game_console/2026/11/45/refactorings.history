@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;game_console/Core/Src/keypad.c&apos; to &apos;drv_keypad.c&apos;" description="Rename resource &apos;keypad.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/keypad.c" name="drv_keypad.c" stamp="1793593368237" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;game_console/Core/Inc/keypad.h&apos; to &apos;drv_keypad.h&apos;" description="Rename resource &apos;keypad.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/keypad.h" name="drv_keypad.h" stamp="1793593400635" updateReferences="true"/>
+</session>

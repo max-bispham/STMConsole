@@ -1,4 +1,6 @@
+"./Core/Src/app.o"
 "./Core/Src/driver.o"
+"./Core/Src/drv_keypad.o"
 "./Core/Src/drv_led.o"
 "./Core/Src/drv_oled.o"
 "./Core/Src/main.o"

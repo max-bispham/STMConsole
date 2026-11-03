@@ -15,26 +15,26 @@
 extern "C" {
 #endif
 
-typedef struct {
-    int (*open)(void);
-    int (*close)(void);
-    int (*read)(uint8_t *buf, size_t len);
-    int (*write)(const uint8_t *buf, size_t len);
-    int (*ioctl)(int request, void *arg);
-} driver_t;
+	typedef struct {
+		int (*open)(void);
+		int (*close)(void);
+		int (*read)(uint8_t *buf, size_t len);
+		int (*write)(const uint8_t *buf, size_t len);
+		int (*ioctl)(int request, void *arg);
+	} driver_t;
 
-enum {
-    DRV_OK      =  0,
-    DRV_ERR     = -1,
-    DRV_ENOTSUP = -2,
-    DRV_EINVAL  = -3,
-    DRV_EBUSY   = -4
-};
+	enum {
+		DRV_OK      =  0,
+		DRV_ERR     = -1,
+		DRV_ENOTSUP = -2,
+		DRV_EINVAL  = -3,
+		DRV_EBUSY   = -4
+	};
 
-int drv_nop(void);
-int drv_unsupported_read(uint8_t *buf, size_t len);
-int drv_unsupported_write(const uint8_t *buf, size_t len);
-int drv_unsupported_ioctl(int request, void *arg);
+	int drv_nop(void);
+	int drv_unsupported_read(uint8_t *buf, size_t len);
+	int drv_unsupported_write(const uint8_t *buf, size_t len);
+	int drv_unsupported_ioctl(int request, void *arg);
 
 #ifdef __cplusplus
 }

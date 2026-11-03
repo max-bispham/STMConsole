@@ -1,0 +1,65 @@
+/*
+ * keypad.c
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+
+#include "keypad.h"
+#include "main.h"
+
+static int keypad_open(void);
+static int keypad_read(uint8_t *buf, size_t len);
+void keypad_tick(void);
+
+typedef struct{
+	GPIO_TypeDef *port;
+	uint16_t      btn;
+} button_t;
+
+static uint8_t input_state = 0x00;
+static uint8_t last_state = 0x00;
+
+
+HAL_GPIO_MODULE_ENABLED
+
+static const button_t keypad[8] = {
+		{.port = BTN0_GPIO_Port,	.btn = BTN0_Pin},
+		{.port = BTN1_GPIO_Port,	.btn = BTN1_Pin},
+		{.port = BTN2_GPIO_Port,	.btn = BTN2_Pin},
+		{.port = BTN3_GPIO_Port,	.btn = BTN3_Pin},
+		{.port = BTN4_GPIO_Port,	.btn = BTN4_Pin},
+		{.port = BTN5_GPIO_Port,	.btn = BTN5_Pin},
+		{.port = BTN6_GPIO_Port,	.btn = BTN6_Pin},
+		{.port = BTN7_GPIO_Port,	.btn = BTN7_Pin}
+};
+
+const driver_t dev_keypad = {
+		.open = keypad_open,
+		.close = drv_nop,
+		.read = keypad_read,
+		.write = drv_unsupported_write,
+		.ioctl = drv_unsupported_ioctl
+};
+
+void keypad_tick(void) {
+	uint8_t new_state = 0x00;
+	for (int i = 0; i < (sizeof(keypad) / sizeof(keypad[0])); i++) {
+		uint8_t pinput = !HAL_GPIO_ReadPin(keypad[i].port, keypad[i].btn);
+		new_state = new_state | pinput << i;
+	}
+	if (new_state == last_state) {input_state = new_state; }
+	last_state = new_state;
+}
+
+static int keypad_open(void) {
+
+}
+
+static int keypad_read(uint8_t *buf, size_t len) {
+	if (buf != NULL && len == 1) {
+		buf[0] = input_state;
+		return 1;
+	}
+	return -1;
+}

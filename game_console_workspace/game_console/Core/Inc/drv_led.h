@@ -10,8 +10,14 @@
 
 #include "driver.h"
 
-extern const driver_t dev_led;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+	extern const driver_t dev_led;
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* INC_DRV_LED_H_ */

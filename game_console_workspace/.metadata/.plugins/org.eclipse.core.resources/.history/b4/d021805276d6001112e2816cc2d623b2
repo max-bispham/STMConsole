@@ -1,0 +1,17 @@
+/*
+ * app.cpp
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+#include "app.h"
+#include "screen.h"
+#include "drv_oled.h"
+#include "drv_led.h"
+
+extern "C" {
+
+
+}
+
+

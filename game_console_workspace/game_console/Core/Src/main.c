@@ -21,9 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "drv_led.h"
-#include "drv_oled.h"
-#include "screen.h"
+#include "app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,7 +89,7 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-  dev_led.open();
+//  dev_led.open();
   uint8_t on = 0x03;
   uint8_t off = 0x00;
   static const uint8_t cube_frame[1024] = {
@@ -167,6 +165,9 @@ int main(void)
 //  screen_set_pixel(127, 0, 1);
 //  screen_set_pixel(127, 63, 1);
 //  dev_display.write(screen_buffer(), SCREEN_BYTES);
+
+
+  app_main();
   /* USER CODE END 2 */
 
   /* Infinite loop */

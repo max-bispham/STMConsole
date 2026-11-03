@@ -1,0 +1,23 @@
+/*
+ * keypad.c
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+
+#include "keypad.h"
+
+
+static int keypad_open(void);
+static int keypad_read(uint8_t *buf, size_t len);
+
+
+const driver_t dev_keypad {
+		.open = keypad_open,
+		.close = drv_unsupported_close,
+		,read = keypad_read,
+		.write = drv_unsupported_write,
+		,ioctl = drv_unsupported_ioctl
+}
+
+

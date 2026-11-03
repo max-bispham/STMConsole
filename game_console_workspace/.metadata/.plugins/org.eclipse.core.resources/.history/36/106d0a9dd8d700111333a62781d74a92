@@ -1,0 +1,26 @@
+/*
+ * app.cpp
+ *
+ *  Created on: Nov 1, 2026
+ *      Author: max
+ */
+#include "app.h"
+#include "screen.h"
+#include "drv_oled.h"
+#include "drv_led.h"
+#include "drv_keypad.h"
+
+void app_main(void) {
+
+	dev_keypad.open();
+	dev_led.open();
+	uint8_t state = 0x00;
+	while (1) {
+		keypad_tick();
+		dev_keypad.read(&state, sizeof(state));
+		dev_led.write(&state, sizeof(on));
+	}
+}
+
+
+

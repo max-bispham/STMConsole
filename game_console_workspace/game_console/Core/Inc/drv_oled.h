@@ -10,11 +10,19 @@
 
 #include "driver.h"
 
-extern const driver_t dev_display;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define DISPLAY_SET_CONTRAST  1
-#define DISPLAY_SET_POWER     2
-#define DISPLAY_SET_INVERT    3
-#define DISPLAY_TEST_ALL_ON   4
+	extern const driver_t dev_display;
+
+	#define DISPLAY_SET_CONTRAST  1
+	#define DISPLAY_SET_POWER     2
+	#define DISPLAY_SET_INVERT    3
+	#define DISPLAY_TEST_ALL_ON   4
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* INC_DRV_OLED_H_ */
