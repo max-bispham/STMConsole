@@ -1,3 +1,4 @@
 ../Core/Src/screen.c:16:16:screen_buffer	1
 ../Core/Src/screen.c:20:6:screen_clear	1
 ../Core/Src/screen.c:24:6:screen_set_pixel	6
+../Core/Src/screen.c:33:6:screen_blit_chip8	3

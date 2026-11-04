@@ -2,6 +2,15 @@
 <section name="Workbench">
 	<section name="java.lang.Class">
 		<list key="findhistory">
+			<item value="roms"/>
+			<item value="memset"/>
+			<item value="LoadROM"/>
+			<item value="video"/>
+			<item value="Dxyn"/>
+			<item value="Cxkk"/>
+			<item value="00E0"/>
+			<item value="00"/>
+			<item value="randgen"/>
 			<item value="BTN0_Pin"/>
 			<item value="BTN0_Pinm"/>
 			<item value="oled_cmd"/>

@@ -9,16 +9,50 @@
 #include "drv_oled.h"
 #include "drv_led.h"
 #include "drv_keypad.h"
+#include "chip8.h"
+#include <string.h>
+#include "roms.h"
+#include "main.h"
+static Chip8 chip8;
 
 void app_main(void) {
 
+	dev_display.open();
 	dev_keypad.open();
-	dev_led.open();
-	uint8_t state = 0x00;
+	screen_clear();
+	dev_display.write(screen_buffer(), SCREEN_BYTES);
+
+	chip8.LoadROM(roms[3].data, roms[3].size);
+	chip8.Seed(1);
+
 	while (1) {
-		keypad_tick();
-		dev_keypad.read(&state, sizeof(state));
-		dev_led.write(&state, sizeof(state));
+		// Input: sample the buttons, then map them to CHIP-8 keys
+		    keypad_tick();
+		    uint8_t buttons = 0;
+		    dev_keypad.read(&buttons, sizeof buttons);
+
+		    memset(chip8.keypad, 0, sizeof chip8.keypad);
+		    for (int n = 0; n < 8; n++) {
+		        if (buttons & (1u << n)) {
+		            chip8.keypad[roms[3].keymap[n] & 0x0F] = 1;
+		        }
+		    }
+
+		    // Run about 600 instructions per second
+		    for (int i = 0; i < 10; i++) {
+		        chip8.Cycle();
+		    }
+
+		    chip8.UpdateTimers();
+
+		    // Redraw only when the game changed the picture
+		    if (chip8.drawFlag) {
+		        screen_blit_chip8(chip8.video);
+		        dev_display.write(screen_buffer(), SCREEN_BYTES);
+		        chip8.drawFlag = false;
+		    }
+
+		    HAL_Delay(15);
 	}
 }
 
