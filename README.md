@@ -10,9 +10,9 @@ In development. The toolchain, pin map, and architecture are settled, and the fi
 - [x] Display initializes (all pixels on)
 - [x] Display accepts a full frame
 - [x] Pixel addressing
-- [ ] Emulator runs on the board (IBM logo)
+- [x] Emulator runs on the board (IBM logo)
 - [ ] Sound
-- [ ] Input and a playable game
+- [x] Input and a playable game
 
 Stage 2 moves the same drivers under FreeRTOS and adds the SD card:
 
